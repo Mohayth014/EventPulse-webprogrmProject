@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventPulse - Project Presentation Slide Deck</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #090d16;
+            --surface-card: #151b2b;
+            --primary-accent: #6366f1;
+            --secondary-accent: #a855f7;
+            --cyan-accent: #38bdf8;
+            --green-accent: #10b981;
+            --amber-accent: #f59e0b;
+        }
+        body {
+            background-color: var(--bg-dark);
+            color: #f8fafc;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            user-select: none;
+        }
+        .slide-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 4rem;
+            position: relative;
+        }
+        .slide {
+            display: none;
+            width: 100%;
+            max-width: 1200px;
+            animation: slideFadeIn 0.4s ease-out forwards;
+        }
+        .slide.active {
+            display: block;
+        }
+        @keyframes slideFadeIn {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .slide-tag {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--secondary-accent);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .slide-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: all 0.25s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(99, 102, 241, 0.5);
+            transform: translateY(-3px);
+        }
+        .nav-dock {
+            background: rgba(15, 23, 42, 0.9);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 0.75rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .key-badge {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.75rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Slide Canvas -->
+    <div class="slide-container">
+        <!-- Slide 1: Title -->
+        <div class="slide active" id="slide-1">
+            <div class="p-5 glass-card text-center" style="border: 2px solid var(--primary-accent);">
+                <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill bg-primary bg-opacity-25 text-info small fw-bold mb-3">
+                    <i class="bi bi-ticket-perforated-fill"></i> NEXT-GEN EVENT ECOSYSTEM
+                </div>
+                <h1 class="display-3 fw-extrabold mb-3" style="font-family:'Space Grotesk';">
+                    Event<span style="background: linear-gradient(135deg, #6366f1, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Pulse</span>
+                </h1>
+                <p class="lead text-light text-opacity-75 mb-4 max-w-700 mx-auto">
+                    Intelligent Event Registration & Ticketing Ecosystem with 5 Groundbreaking Novelties.
+                </p>
+                <div class="d-flex justify-content-center gap-2 mb-4">
+                    <span class="badge bg-primary px-3 py-2">PHP 8.3</span>
+                    <span class="badge bg-success px-3 py-2">MySQL 8.0</span>
+                    <span class="badge bg-info text-dark px-3 py-2">Bootstrap 5.3</span>
+                    <span class="badge bg-warning text-dark px-3 py-2">Web Audio API</span>
+                </div>
+                <div class="text-muted small">
+                    Presented by <strong>Antigravity Engineering Pair</strong> &bull; Local Web Deployment Active
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Problem Statement -->
+        <div class="slide" id="slide-2">
+            <div class="slide-tag">Problem Analysis</div>
+            <div class="slide-title">Critical Flaws in Conventional Ticketing</div>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="glass-card h-100" style="border-left: 4px solid var(--amber-accent);">
+                        <h4 class="fw-bold text-warning mb-2"><i class="bi bi-shield-x me-2"></i> Ticket Scalping & Fake Passes</h4>
+                        <p class="text-light text-opacity-75 small">Static QR codes and screenshot sharing allow bad actors to replicate passes, resell duplicate barcodes, and create gate chaos.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="glass-card h-100" style="border-left: 4px solid var(--primary-accent);">
+                        <h4 class="fw-bold text-primary mb-2"><i class="bi bi-eye-slash me-2"></i> Blind Seat Selection</h4>
+                        <p class="text-light text-opacity-75 small">Standard drop-down menus hide venue geometry. Buyers have no sense of angle, stage distance, acoustic clarity, or obstructed sightlines.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="glass-card h-100" style="border-left: 4px solid var(--cyan-accent);">
+                        <h4 class="fw-bold text-info mb-2"><i class="bi bi-calendar-x me-2"></i> Multi-Track Decision Fatigue</h4>
+                        <p class="text-light text-opacity-75 small">Large summits overwhelm attendees with concurrent conflicting keynotes and leave relevant peer networking to pure chance.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="glass-card h-100" style="border-left: 4px solid var(--green-accent);">
+                        <h4 class="fw-bold text-success mb-2"><i class="bi bi-people me-2"></i> Disconnected Group Reservations</h4>
+                        <p class="text-light text-opacity-75 small">Hackathon teams and corporate groups cannot easily coordinate seat blocks, share invite codes, or receive group volume discounts.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: 5 Novelties -->
+        <div class="slide" id="slide-3">
+            <div class="slide-tag">Core Value Proposition</div>
+            <div class="slide-title">5 Distinct Engineering Novelties</div>
+            <div class="d-flex flex-column gap-3">
+                <div class="glass-card py-2 px-3 d-flex align-items-center justify-content-between" style="border-left: 4px solid var(--primary-accent);">
+                    <div>
+                        <strong class="text-primary">Novelty 1: Interactive SVG Seating Map & Stage Simulation</strong>
+                        <div class="small text-light text-opacity-75">Visual stadium seating, dynamic 2D stage perspective canvas, acoustic clarity calculations, and 5-min cart hold.</div>
+                    </div>
+                    <span class="badge bg-primary">Novelty 1</span>
+                </div>
+                <div class="glass-card py-2 px-3 d-flex align-items-center justify-content-between" style="border-left: 4px solid var(--cyan-accent);">
+                    <div>
+                        <strong class="text-info">Novelty 2: Anti-Scalp Rotating TOTP Pass & Audio Gatekeeper</strong>
+                        <div class="small text-light text-opacity-75">30-second cryptographic HMAC code rotation, browser webcam QR scan, and Web Audio API synthesized chimes.</div>
+                    </div>
+                    <span class="badge bg-info text-dark">Novelty 2</span>
+                </div>
+                <div class="glass-card py-2 px-3 d-flex align-items-center justify-content-between" style="border-left: 4px solid var(--amber-accent);">
+                    <div>
+                        <strong class="text-warning">Novelty 3: AI Event Concierge & Itinerary Matchmaker</strong>
+                        <div class="small text-light text-opacity-75">Customized session schedules tailored to attendee roles and goals with conflict resolution and 1-click .ICS export.</div>
+                    </div>
+                    <span class="badge bg-warning text-dark">Novelty 3</span>
+                </div>
+                <div class="glass-card py-2 px-3 d-flex align-items-center justify-content-between" style="border-left: 4px solid var(--secondary-accent);">
+                    <div>
+                        <strong style="color:var(--secondary-accent);">Novelty 4: Squad RSVP & Group Perks Engine</strong>
+                        <div class="small text-light text-opacity-75">Viral team referral codes, automated 15-20% volume tier discounts, and unified delegation badges.</div>
+                    </div>
+                    <span class="badge" style="background:var(--secondary-accent);">Novelty 4</span>
+                </div>
+                <div class="glass-card py-2 px-3 d-flex align-items-center justify-content-between" style="border-left: 4px solid var(--green-accent);">
+                    <div>
+                        <strong class="text-success">Novelty 5: Dynamic Demand Surge & Eco-Offset Green Badge</strong>
+                        <div class="small text-light text-opacity-75">Real-time ticket velocity ticker and certified tree-planting offset add-on with verifiable digital badges.</div>
+                    </div>
+                    <span class="badge bg-success">Novelty 5</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Interactive Seating -->
+        <div class="slide" id="slide-4">
+            <div class="slide-tag">Novelty #1 Deep Dive</div>
+            <div class="slide-title">Interactive SVG Seating & Stage Simulation</div>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="glass-card h-100">
+                        <h5 class="fw-bold text-primary mb-3">Venue Grid & Tier Architecture</h5>
+                        <ul class="text-light text-opacity-75 small d-flex flex-column gap-2 mb-0">
+                            <li><strong>Multi-Tiered Pricing:</strong> VIP Sovereign (Rows A-B), Premium Gold (Rows C-D), Standard (Rows E-F).</li>
+                            <li><strong>96 Interactive Seat Nodes:</strong> Click-to-select, real-time availability states, booked indicators, and maximum seat limits.</li>
+                            <li><strong>Concurrency Protection:</strong> MySQL row-level locks and 5-minute temporary reservation timer prevent race-condition cart collisions.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="glass-card h-100">
+                        <h5 class="fw-bold text-info mb-3">Canvas 2D Stage Perspective View</h5>
+                        <ul class="text-light text-opacity-75 small d-flex flex-column gap-2 mb-0">
+                            <li><strong>Dynamic Distance:</strong> Real-time calculation from 6 meters (front row) to 26 meters (back row).</li>
+                            <li><strong>Perspective Angle:</strong> Computes lateral sightline angle from -36° (left wing) to +36° (right wing).</li>
+                            <li><strong>Acoustic Rating:</strong> Mathematical clarity score percentage displayed live as attendees browse seats.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Anti-Scalp Passes -->
+        <div class="slide" id="slide-5">
+            <div class="slide-tag">Novelty #2 Deep Dive</div>
+            <div class="slide-title">Anti-Scalp Dynamic TOTP Pass & Audio Gatekeeper</div>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="glass-card h-100">
+                        <h5 class="fw-bold text-info mb-3">HMAC-SHA256 30s Dynamic Security</h5>
+                        <p class="small text-light text-opacity-75">Every digital pass computes an ephemeral 8-character token based on 30-second Unix time slots: <code>HMAC_SHA256(time_slot, ticket_hash + secret)</code>.</p>
+                        <div class="p-3 bg-black rounded-3 font-monospace text-info small mb-2">
+                            Token: EP-9821-X (Refreshes in 18s)
+                        </div>
+                        <p class="small text-muted mb-0">Static screenshots or pirated photos become invalid within seconds!</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="glass-card h-100">
+                        <h5 class="fw-bold text-success mb-3">Turn-Key Optical Gatekeeper & Sound Synthesis</h5>
+                        <p class="small text-light text-opacity-75">No specialized handheld terminals required! Organizers open the gate station on any smartphone or laptop camera.</p>
+                        <ul class="small text-light text-opacity-75 d-flex flex-column gap-1 mb-0">
+                            <li><strong class="text-success">Dual-tone Chime:</strong> Pleasant chord signals valid admission.</li>
+                            <li><strong class="text-danger">Saw-wave Buzz:</strong> Warns instantly against duplicate entries.</li>
+                            <li><strong class="text-info">Instant Invalidation:</strong> Updates MySQL check-in timestamp in &lt;400ms.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Database & Security -->
+        <div class="slide" id="slide-6">
+            <div class="slide-tag">System Foundation</div>
+            <div class="slide-title">Database Engineering & Cyber Defense</div>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="glass-card h-100">
+                        <h5 class="fw-bold text-primary mb-3"><i class="bi bi-database me-2"></i> MySQL 8.0 Normalized Schema</h5>
+                        <div class="small text-light text-opacity-75 d-flex flex-column gap-1">
+                            <div><code>users</code>: RBAC (admin, organizer, attendee)</div>
+                            <div><code>events</code>, <code>ticket_tiers</code>, <code>seats</code>: Full spatial venue graph</div>
+                            <div><code>bookings</code>, <code>ticket_items</code>: ACID financial records</div>
+                            <div><code>squads</code>, <code>carbon_offsets</code>: Group & eco metadata</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="glass-card h-100">
+                        <h5 class="fw-bold text-success mb-3"><i class="bi bi-shield-check me-2"></i> Security Best Practices</h5>
+                        <div class="small text-light text-opacity-75 d-flex flex-column gap-2">
+                            <div><strong>Bcrypt Hashing:</strong> Work factor 10 protects user passwords.</div>
+                            <div><strong>Prepared Statements:</strong> 100% parameterized PDO queries eliminate SQL injection.</div>
+                            <div><strong>XSS Sanitization:</strong> Strict htmlspecialchars output escaping.</div>
+                            <div><strong>CSRF Defense:</strong> Cryptographic anti-forgery tokens on all mutations.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Live Website & Conclusion -->
+        <div class="slide" id="slide-7">
+            <div class="slide-tag">Summary & Verification</div>
+            <div class="slide-title">Live Deployment & Production Verification</div>
+            <div class="glass-card p-4 text-center">
+                <div class="rounded-circle bg-success text-white p-3 d-inline-flex mb-3">
+                    <i class="bi bi-check2-all fs-2"></i>
+                </div>
+                <h3 class="fw-bold mb-2">Web Application is Fully Functional & Serving Live</h3>
+                <p class="text-light text-opacity-75 small max-w-700 mx-auto mb-4">
+                    The platform is operating live on <code>http://localhost:8000</code> backed by PHP 8.3 and MySQL 8.0. Every novelty is demonstrable and verified with automated test requests.
+                </p>
+                <div class="d-flex justify-content-center gap-3">
+                    <a href="http://localhost:8000" target="_blank" class="btn btn-primary rounded-pill px-4">
+                        <i class="bi bi-globe me-1"></i> Open Live Website
+                    </a>
+                    <a href="PROJECT_REPORT.html" target="_blank" class="btn btn-outline-info rounded-pill px-4">
+                        <i class="bi bi-file-earmark-richtext me-1"></i> Read Formal Report
+                    </a>
+                    <a href="EventPulse_Presentation.pptx" download class="btn btn-outline-light rounded-pill px-4">
+                        <i class="bi bi-download me-1"></i> Download .PPTX
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Dock -->
+    <div class="nav-dock">
+        <div class="d-flex align-items-center gap-3">
+            <span class="fw-bold fs-5 text-gradient">EventPulse Deck</span>
+            <span class="text-muted small">&bull; Slide <span id="currentSlideNum">1</span> of <span id="totalSlideNum">7</span></span>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+            <span class="text-muted small me-2"><span class="key-badge">&larr;</span> / <span class="key-badge">&rarr;</span> to navigate</span>
+            <button class="btn btn-sm btn-outline-secondary rounded-pill px-3" id="prevBtn"><i class="bi bi-chevron-left"></i> Prev</button>
+            <button class="btn btn-sm btn-primary rounded-pill px-3" id="nextBtn">Next <i class="bi bi-chevron-right"></i></button>
+        </div>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const currentSlideNumEl = document.getElementById('currentSlideNum');
+        const totalSlideNumEl = document.getElementById('totalSlideNum');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        let currentIndex = 0;
+        totalSlideNumEl.textContent = slides.length;
+
+        function showSlide(index) {
+            slides.forEach((s, idx) => {
+                s.classList.toggle('active', idx === index);
+            });
+            currentIndex = index;
+            currentSlideNumEl.textContent = currentIndex + 1;
+            prevBtn.disabled = currentIndex === 0;
+            nextBtn.disabled = currentIndex === slides.length - 1;
+        }
+
+        prevBtn.addEventListener('click', () => {
+            if (currentIndex > 0) showSlide(currentIndex - 1);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            if (currentIndex < slides.length - 1) showSlide(currentIndex + 1);
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                if (currentIndex < slides.length - 1) showSlide(currentIndex + 1);
+            } else if (e.key === 'ArrowLeft') {
+                if (currentIndex > 0) showSlide(currentIndex - 1);
+            }
+        });
+    </script>
+</body>
+</html>
